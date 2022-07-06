@@ -1,39 +1,47 @@
-let Name = document.getElementById("name").value;
-let Email = document.getElementById("email").value;
-let Comment = document.getElementById("comment").value;
+const name = document.getElementById("name");
+const email = document.getElementById("email");
+const comment = document.getElementById("comment");
+const submit = document.getElementById("submit");
+// needs to tell it what to do when clicked: const clicked = document.addEventListener("click",);
+// might need to remove?: const body = document.addEventListener("body");
+const nameResult = document.getElementById("name-result");
+const emailResult = document.getElementById("email-result");
+const commentResult = document.getElementById("comment-result");
 
-let Submit = document.getElementByID("submit");
-let clicked = document.addEventListener("click");
-let Body = document.addEventListener("body");
-let newDiv = document.createElement("div");
+// CHARACTER COUNT
+const maxChars = 140;
+const commentCounter = document.getElementById("comment-counter");
+comment.addEventListener('input', () => {
+  const charCount = comment.value.length;
+  commentCounter.textContent = `${charCount} /140`;
+  console.log(charCount)
+});
 
-// loop for char count
-let CommentChars = Comment.split(""); 
-let CommentCount = {};
-for (var i = 0; i < CommentChars.length; i++) {
-  if (CommentCount[CommentChars[i]] == undefined)
-    CommentCount[CommentChars[i]] = 0;
-  CommentCount[CommentChars[i]] += 1;
-}
+// let commentChar = comment.split(""); 
+// let commentCount = {};
+// for (var i = 0; i < commentChars.length; i++) {
+//   if (commentCount[commentChars[i]] == undefined)
+//     commentCount[commentChars[i]] = 0;
+//   commentCount[commentChars[i]] += 1;
+// }
+// for (i in commentCount)
+// {
+//   console.log(i + ' ' + commentCount[i]);
+// }
+// let length = comment.str.length;
+// let commentCounter = document.getElementById("comment-counter")
+// commentCounter.append(length);
 
-for (i in CommentCount)
-{
-  console.log(i + ' ' + CommentCount[i]);
-}
-// 
-
-let length = Comment.str.length;
-Comment.append(newDiv);
-newDiv.textContent = length, "/140";
-
-submitOK = "true";
-
-if (Comment.length > 140) {
-  alert("The name may have no more than 140 characters");
-  submitOK = "false";
-}
-// else 
 // submitOK = "true";
+
+// if (Comment.length > 140) {
+//   alert("The name may have no more than 140 characters");
+//   submitOK = "false";
+// }
+// // else 
+// submitOK = "true";
+
+// RETURN RESULTS
 
 function showInput() {
     newDiv.innerText = "name is: ", Name, "email is: ", Email, "comment is: ", Comment;
