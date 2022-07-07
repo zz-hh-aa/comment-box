@@ -1,9 +1,8 @@
-var name = document.getElementById("name");
-var email = document.getElementById("email");
+// why isn't var name working??
+// var name = document.getElementById("name");
+// var email = document.getElementById("email");
 var comment = document.getElementById("comment");
 var submit = document.getElementById("submit");
-// needs to tell it what to do when clicked: const clicked = document.addEventListener("click",);
-// might need to remove?: const body = document.addEventListener("body");
 
 // CHARACTER COUNT
 const maxChars = 140;
@@ -19,16 +18,23 @@ comment.addEventListener('input', () => {
 });
 
 // RETURN RESULTS
-const nameResult = document.getElementById("name-result");
-const emailResult = document.getElementById("email-result");
-const commentResult = document.getElementById("comment-result");
+// const nameResult = document.getElementById("name-result");
+// const emailResult = document.getElementById("email-result");
+const commentSubmitted = document.getElementById("comment-submitted");
+// const nameValue = document.getElementById("name-value");
+// const emailValue = document.getElementById("email-value");
+const commentValue = document.getElementById("comment-value");
+
 
 function showInput() {
-  nameResult.innerText = "name is: ", name.value;
-  emailResult.innerText = "email is: ", email.value;
-  commentResult.innerText = "comment is: ", comment.value;
-  console.log(name.value, email.value, comment.value);
-}
+  // nameResult.innerHTML = "name is: ", name;
+  // emailResult.innerHTML = "email is: ", email;
+  commentSubmitted.innerText = "comment submitted: ";
+  // nameValue.innerHTML = name.value;
+  // emailValue.innerHTML = email.value;
+  commentValue.innerHTML = comment.value;
+  console.log(comment.value);
+};
 
 //   submit.addEventListener('click',()=> {
 //     if (submit === clicked) {

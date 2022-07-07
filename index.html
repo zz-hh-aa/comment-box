@@ -12,27 +12,28 @@
 <!-- instructions here https://stackoverflow.com/questions/15447889/display-html-form-values-in-same-page-after-submit-using-ajax -->
 <body>
     <form action="">
-        <div><label for="name">name:</label><br>
-            <input type="text" name="name" id="name">
+        <div>
+            <label for="name">name:</label><br>
+            <input type="text" id="name">
         </div>
         
         <div>
             <label for="email">email:</label><br>
-            <input type="text" name="email" id="email">
+            <input type="text" id="email">
         </div>
         
         <div>
             <label for="comment">comment:</label><br>
-            <input type="text" name="comment" id="comment"><span id="comment-counter"> </span>
+            <input type="text" id="comment"><span id="comment-counter"> </span>
         </div>
         <div>
-            <!-- <button onclick="showInput()" id="submit" type="submit">submit</button> -->
-            <input onclick="showInput()" type="submit" id="submit" value ="submit">
+            <button onclick="showInput(); return false;" id="submit" type="submit">submit</button>
+            <!-- <input onclick="showInput(); return false;"; type="submit" id="submit" value ="submit"> -->
         </div>
     </form>
     <p id="results">
-        <div id="name-result"><span id="name-value"></span></div>
-        <div id="email-result"><span id="email-value></span></div>
-        <div id="comment-result"><span id="comment-value"></span></div>
+        <!-- <div id="name-result"><span id="name-value"></span></div>
+        <div id="email-result"><span id="email-value"></span></div> -->
+        <div><span id="comment-submitted"></span><span id="comment-value"></span></div>
     </p>
 </body>
