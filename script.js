@@ -1,4 +1,4 @@
-
+var username = document.getElementById("username");
 var comment = document.getElementById("comment");
 var submit = document.getElementById("submit");
 
@@ -18,10 +18,17 @@ comment.addEventListener('input', () => {
 // RETURN RESULTS
 const commentSubmitted = document.getElementById("comment-submitted");
 const commentValue = document.getElementById("comment-value");
+const emailSubmitted = document.getElementById("email-submitted");
+const emailValue = document.getElementById("email-value");
+const usernameSubmitted = document.getElementById("username-submitted");
+const usernameValue = document.getElementById("username-value");
 
 
 function showInput() {
+  usernameSubmitted.innerText = "name submitted: ";
+  usernameValue.innerHTML = username.value;
+  emailSubmitted.innerText = "email submitted: ";
+  emailValue.innerHTML = email.value;
   commentSubmitted.innerText = "comment submitted: ";
   commentValue.innerHTML = comment.value;
-  console.log(comment.value);
 };
